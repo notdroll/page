@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>droll — papers</title>
+  <meta name="description" content="Papers and long-form writing.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="https://droll.page/papers/">
+  <meta property="og:title" content="droll — papers">
+  <meta property="og:description" content="Papers and long-form writing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://droll.page/papers/">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand"><a href="/" aria-label="droll home">droll</a></div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a class="active" href="/papers/">Papers</a>
+        <a href="/work/">Work</a>
+        <a href="/favorites/">Favorites</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+    <div class="banner"><p class="tagline">Papers</p></div>
+  </header>
+
+  <main id="content" class="container">
+    <h1>Papers</h1>
+    <ul class="list">
+      <li>
+        <a href="/papers/your-paper-slug/">Title of Your Paper</a>
+        <span class="muted">— Month Day, Year</span>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> droll. <a href="/sitemap.xml">Sitemap</a></p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

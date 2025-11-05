@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title of Your Paper — droll</title>
+  <meta name="description" content="Abstract or one-sentence summary of the paper.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="https://droll.page/papers/your-paper-slug/">
+  <meta property="og:title" content="Title of Your Paper — droll">
+  <meta property="og:description" content="Abstract or one-sentence summary of the paper.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://droll.page/papers/your-paper-slug/">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand"><a href="/" aria-label="droll home">droll</a></div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a class="active" href="/papers/">Papers</a>
+        <a href="/work/">Work</a>
+        <a href="/favorites/">Favorites</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+    <div class="banner"><p class="tagline">Paper</p></div>
+  </header>
+
+  <main id="content" class="container prose">
+    <article>
+      <header class="article-header">
+        <h1>Title of Your Paper</h1>
+        <p class="muted">Month Day, Year · ~15 min read</p>
+        <p class="abstract">Abstract: A short paragraph that sets up the core idea and takeaway.</p>
+        <p><a class="button" href="./Your-Paper.pdf">Download PDF</a></p>
+      </header>
+
+      <hr class="section-rule"/>
+
+      <section>
+        <h2>Introduction</h2>
+        <p>Paste your intro here. Keep headings semantic (H2 for sections, H3 for subsections).</p>
+      </section>
+
+      <section>
+        <h2>Main Section</h2>
+        <p>Write your content. Use <em>emphasis</em>, <strong>strong</strong>, and lists as needed.</p>
+        <ol>
+          <li>A point</li>
+          <li>Another point</li>
+        </ol>
+        <p>Footnote example<sup id="fnref1"><a href="#fn1">1</a></sup>.</p>
+      </section>
+
+      <section>
+        <h2>Conclusion</h2>
+        <p>Wrap it up with a clear conclusion and any calls to action.</p>
+      </section>
+
+      <hr class="section-rule"/>
+
+      <section class="footnotes">
+        <h3>Footnotes</h3>
+        <ol>
+          <li id="fn1">This is a sample footnote. <a href="#fnref1" aria-label="Back to content">↩︎</a></li>
+        </ol>
+      </section>
+
+      <details class="citation">
+        <summary>Citation</summary>
+        <pre><code>Author, “Title of Your Paper,” droll.page/papers/your-paper-slug/, 2025.</code></pre>
+      </details>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> droll. <a href="/sitemap.xml">Sitemap</a></p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
