@@ -10,7 +10,7 @@
   {% if canonical %}<link rel="canonical" href="{{ canonical }}"/>{% endif %}
   <meta property="og:title" content="{{ title | default: 'droll' }}"/>
   <meta property="og:description" content="{{ description | default: 'Minimal personal site for essays, work, and favorites.' }}"/>
-  <meta property="og:image" content="{{ (image | default: '/assets/og.jpg') | url }}">
+  <meta property="og:image" content="{{ image | default: '/assets/og.jpg' | url }}">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
