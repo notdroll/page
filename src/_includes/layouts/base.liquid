@@ -1,33 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>{% if title %}{{ title }} — droll{% else %}droll — home{% endif %}</title>
-  <meta name="description" content="{{ description | default: 'Writing and projects.' }}"/>
+
+  <meta name="description" content="{{ description | default: 'Minimal personal site for essays, work, and favorites.' }}"/>
   <meta property="og:title" content="{{ title | default: 'droll' }}"/>
-  <meta property="og:description" content="{{ description | default: 'Writing and projects.' }}"/>
+  <meta property="og:description" content="{{ description | default: 'Minimal personal site for essays, work, and favorites.' }}"/>
   <meta property="og:image" content="{{ image | default: '/assets/og.jpg' | url }}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css?v=1' | url }}">
-  <link rel="me" href="https://x.com/notdroll"/>
+
+  <link rel="stylesheet" href="/assets/css/main.css?v=2">
+  {% if canonical %}<link rel="canonical" href="{{ canonical }}"/>{% endif %}
 </head>
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
   <div class="shell">
+
     <aside class="sidebar">
       <div class="sidebar-inner">
         <h1 class="site-name"><a href="{{ '/' | url }}">droll</a></h1>
         <p class="site-sub">a token lawyer, but not a token lawyer</p>
-        <nav class="side-nav" aria-label="Main">
-          <a href="{{ '/' | url }}"            {% if page.url == '/' %}class="active"{% endif %}>About</a>
-          <a href="{{ '/papers/' | url }}"     {% if page.url == '/papers/' or page.url startswith '/papers/' %}class="active"{% endif %}>Papers</a>
-          <a href="{{ '/work/' | url }}"       {% if page.url == '/work/' %}class="active"{% endif %}>Work</a>
-          <a href="{{ '/favorites/' | url }}"  {% if page.url == '/favorites/' %}class="active"{% endif %}>Favorites</a>
-          <a href="{{ '/contact/' | url }}"    {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a>
+
+        <nav class="side-nav">
+          <a href="{{ '/about/' | url }}">About</a>
+          <a href="{{ '/papers/' | url }}">Papers</a>
+          <a href="{{ '/work/' | url }}">Work</a>
+          <a href="{{ '/favorites/' | url }}">Favorites</a>
+          <a href="{{ '/contact/' | url }}">Contact</a>
         </nav>
+
         <div class="side-links">
-          <a href="https://x.com/notdroll">X</a>
+          <a href="https://x.com/notdroll" target="_blank" rel="me noopener">X</a>
           <span class="dot">·</span>
           <a href="{{ '/sitemap.xml' | url }}">Sitemap</a>
         </div>
@@ -36,10 +40,9 @@
 
     <main id="content" class="content">
       {{ content }}
-      <footer class="site-footer">
-        <p>© {{ "now" | date: "%Y" }} droll</p>
-      </footer>
+      <footer class="site-footer">© {{ "now" | date: "%Y" }} droll</footer>
     </main>
+
   </div>
 </body>
 </html>
