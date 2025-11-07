@@ -4,4 +4,4 @@ layout: layouts/base.liquid
 ---
 # Contact
 
-Best way to reach me: <a href="mailto:contact@droll.page">drollingher@gmail.com</a>.
+Find me on Twitter: [@notdroll](https://x.com/notdroll)
