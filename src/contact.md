@@ -4,4 +4,4 @@ layout: layouts/base.liquid
 ---
 # Contact
 
-Best way to reach me: <a href="mailto:drollingher@gmail.com">drollingher@gmail.com</a>.
+Best way to reach me: <a href="mailto:contact@droll.page">drollingher@gmail.com</a>.
