@@ -13,18 +13,19 @@ body{
   font-size:19px; line-height:1.7; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
 
-/* shell container */
-.shell{ position:relative; padding:var(--pad); }
-
-/* fixed sidebar */
-.sidebar{
-  position:fixed;
-  top:var(--pad); left:var(--pad);
-  width:var(--rail);
-  height:calc(100vh - (var(--pad)*2));
-  overflow:auto;
+/* shell is a 2-column grid: sidebar + content */
+.shell{
+  padding:var(--pad);
+  display:grid;
+  grid-template-columns: var(--rail) 1fr;
+  column-gap: var(--gap);
+  align-items:start;
 }
+
+/* sidebar is NORMAL FLOW now (not fixed, not sticky) */
+.sidebar{ position:static; width:100%; height:auto; overflow:visible; }
 .sidebar-inner{ border-right:1px solid var(--border); padding-right:24px; }
+
 .site-name{ font-weight:800; font-size:2rem; margin:0 0 .25rem; }
 .site-name a{ color:inherit; text-decoration:none; }
 .site-sub{ font-style:italic; color:var(--muted); margin:.2rem 0 1.2rem; }
@@ -36,16 +37,13 @@ body{
 .side-links{ color:var(--muted); font-size:.95rem; }
 .side-links .dot{ opacity:.6; padding:0 .35rem; }
 
-/* content column (sticky footer via flex) */
+/* content column: sticky footer via flex */
 .content{
   max-width:var(--max);
-  margin-left:calc(var(--rail) + var(--gap));
   min-height:calc(100vh - (var(--pad)*2));
   display:flex; flex-direction:column;
 }
-.content > *:first-child{ margin-top:.2rem; }
 
-/* type */
 h1,h2,h3{ font-weight:700; line-height:1.25; margin:0 0 .75rem; }
 h1{ font-size:clamp(2.1rem, 3.2vw, 2.6rem); }
 h2{ font-size:clamp(1.4rem, 2.2vw, 1.8rem); margin-top:1.6rem; }
@@ -65,8 +63,8 @@ img{ max-width:100%; height:auto; border-radius:6px; }
 
 /* mobile: stack */
 @media (max-width: 860px){
-  .shell{ padding:22px 18px; }
-  .sidebar{ position:static; width:auto; height:auto; left:auto; top:auto; overflow:visible; }
-  .sidebar-inner{ border-right:0; border-bottom:1px solid var(--border); padding:0 0 14px; margin:0 0 18px; }
-  .content{ margin-left:0; min-height:auto; display:block; }
+  .shell{ padding:22px 18px; display:block; }
+  .sidebar{ margin-bottom:18px; }
+  .sidebar-inner{ border-right:0; border-bottom:1px solid var(--border); padding:0 0 14px; }
+  .content{ min-height:auto; display:block; }
 }
