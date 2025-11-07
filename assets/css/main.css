@@ -68,3 +68,8 @@ img{ max-width:100%; height:auto; border-radius:6px; }
   .sidebar-inner{ border-right:0; border-bottom:1px solid var(--border); padding:0 0 14px; }
   .content{ min-height:auto; display:block; }
 }
+
+/* --- tighten space below meta & before first section --- */
+.post-meta{ margin-bottom:.55rem; }  /* was ~default 1rem */
+.content > h2:first-of-type,
+.content article h2:first-of-type{ margin-top:.95rem; } /* was 1.6rem */
