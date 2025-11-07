@@ -10,7 +10,6 @@ canonical: "https://droll.page/papers/tokens-crypto-agents/"
 <header class="article-header">
   <h1>Tokens, Crypto, and Agents in the New Economy</h1>
   <p class="muted">Nov 2025 · ~15 min read</p>
-  <p class="abstract"><strong>Abstract:</strong> Tokens, crypto, and agents form a loop of creation and refinement that expands what can be represented and built. Tokens make information and value machine-readable; crypto provides a live, permissionless coordination grid; agents interpret, act, and generate new tokens. This paper explores how these parts converge into an expansive economy—and how communication is the glue that makes the system think.</p>
   <!-- If you add a PDF in Step 2, uncomment the button below -->
   <!-- <p><a class="button" href="./Tokens-Crypto-Agents.pdf">Download PDF</a></p> -->
 </header>
