@@ -1,52 +1,67 @@
-/* Minimal, readable CSS — ~2KB */
 :root{
-  --text: #0b0b0b;
-  --bg: #ffffff;
+  --max-width: 760px;
+  --text: #111;
   --muted: #6b7280;
-  --maxw: 70ch;
+  --border: #e5e7eb;
 }
-*{box-sizing:border-box}
-html{font-size:18px}
+
+html,body{margin:0;padding:0}
 body{
-  margin:0;
-  color:var(--text);
-  background:var(--bg);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.65;
-  text-rendering:optimizeLegibility;
+  font-family: -apple-system, BlinkMacSystemFont,"Segoe UI", Inter, Roboto, Helvetica, Arial,"Apple Color Emoji","Segoe UI Emoji";
+  color: var(--text);
+  background: #fff;
+  font-size: 18px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
-.container{max-width:var(--maxw); padding:0 1rem; margin:0 auto}
-.brand{font-weight:600; letter-spacing:0.2px}
-.site-header{border-bottom:1px solid #eee}
-.site-header .container{display:flex; align-items:center; justify-content:space-between; padding:1rem 1rem}
-.nav a{margin-left:1rem; text-decoration:underline; text-underline-offset:2px}
-.nav a.active{font-weight:600}
-.banner{border-top:1px solid #eee; padding:0.75rem 1rem}
-.tagline{margin:0; color:var(--muted)}
-h1,h2,h3{line-height:1.3; font-family:ui-serif,Georgia,"Times New Roman",serif}
-h1{font-size:2rem; margin:2rem 0 0.5rem}
-h2{font-size:1.35rem; margin:2rem 0 0.5rem}
-h3{font-size:1.1rem; margin:1.25rem 0 0.5rem}
-p{margin:1rem 0}
-a{color:inherit}
-a:hover{text-decoration-thickness:2px}
-.muted{color:var(--muted)}
-.list{padding-left:1rem}
-.section-rule{border:0; border-top:1px solid #eee; margin:2rem 0}
-.site-footer{padding:2rem 1rem; border-top:1px solid #eee; margin-top:3rem; color:var(--muted); font-size:0.95rem}
-.skip-link{position:absolute; left:-9999px}
-.skip-link:focus{left:1rem; top:1rem; background:#000; color:#fff; padding:0.5rem 0.75rem; border-radius:6px}
-.prose pre{background:#f8f8f8; padding:1rem; overflow:auto}
-.prose code{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:0.95em}
+
+a{ color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+a:hover{ text-decoration-thickness: 2px; }
+
+.container{ max-width: var(--max-width); margin: 0 auto; padding: 0 1rem; }
+
+.skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus{ left:1rem; top:1rem; width:auto; height:auto; background:#fff; border:1px solid var(--border); padding:.4rem .6rem; }
+
+.site-header{
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+.site-header .container{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: .85rem 1rem;
+}
+.brand a{ text-decoration:none; font-weight:600; letter-spacing:.2px; }
+
+.nav{ display:flex; gap:1rem; flex-wrap:wrap; }
+.nav a{ text-decoration:none; color:#444; }
+.nav a:hover, .nav a.active{ color:var(--text); text-decoration: underline; text-underline-offset:3px; }
+
+.banner{ color: var(--muted); padding:.75rem 0 1.25rem; border-bottom:1px solid var(--border); }
+.banner .tagline{ margin:.2rem 0; }
+
+main.container{ padding: 2rem 1rem; }
+h1{ font-size: clamp(2rem, 4vw, 2.6rem); line-height:1.2; margin: 0 0 1rem; }
+h2{ font-size: clamp(1.4rem, 2.5vw, 1.75rem); margin: 1.5rem 0 .5rem; }
+p{ margin: .75rem 0 1rem; }
+
+hr{ border:0; border-top:1px solid var(--border); margin:2rem 0; }
+
 .button{
-  display:inline-block; padding:0.4rem 0.7rem; border:1px solid #111; border-radius:8px; text-decoration:none;
+  display:inline-block; border:1px solid var(--text); padding:.5rem .8rem;
+  text-decoration:none; color:var(--text); border-radius:.4rem;
 }
-@media (max-width:640px){
-  .nav a{margin-left:0.75rem}
-  html{font-size:17px}
+.button:hover{ background:#111; color:#fff; }
+
+.site-footer{
+  border-top:1px solid var(--border);
+  color: var(--muted);
 }
-@media print{
-  .site-header,.site-footer,.banner,.button{display:none}
-  a{text-decoration:none}
-  body{color:#000}
+.site-footer .container{ padding: 2rem 1rem; font-size:.95rem; }
+
+/* small screens tweak */
+@media (max-width:520px){
+  .site-header .container{ padding:.75rem 1rem; }
+  main.container{ padding:1.5rem 1rem; }
 }

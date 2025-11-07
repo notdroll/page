@@ -3,37 +3,49 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <link rel="me" href="https://x.com/notdroll"/>
   <title>{% if title %}{{ title }} — droll{% else %}droll — home{% endif %}</title>
-  <meta name="description" content="{{ description | default: 'Minimal personal site for essays, work, and favorites.' }}">
-  <link rel="stylesheet" href="/assets/css/main.css"/>
-  {% if canonical %}<link rel="canonical" href="{{ canonical }}"/>{% endif %}
+
+  <meta name="description" content="{{ description | default: 'Minimal personal site for essays, work, and favorites.' }}"/>
   <meta property="og:title" content="{{ title | default: 'droll' }}"/>
   <meta property="og:description" content="{{ description | default: 'Minimal personal site for essays, work, and favorites.' }}"/>
+  <!-- social preview -->
   <meta property="og:image" content="{{ image | default: '/assets/og.jpg' | url }}">
   <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+  <link rel="me" href="https://x.com/notdroll"/>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
+
   <header class="site-header">
     <div class="container">
-      <div class="brand"><a href="/">droll</a></div>
-      <nav class="nav">
-        <a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
-        <a href="/papers/" {% if page.url == '/papers/' or page.url startswith '/papers/' %}class="active"{% endif %}>Papers</a>
-        <a href="/work/">Work</a>
-        <a href="/favorites/">Favorites</a>
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
+      <div class="brand"><a href="{{ '/' | url }}">droll</a></div>
+      <nav class="nav" aria-label="Main">
+        <a href="{{ '/' | url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+        <a href="{{ '/papers/' | url }}" {% if page.url == '/papers/' or page.url startswith '/papers/' %}class="active"{% endif %}>Papers</a>
+        <a href="{{ '/work/'   | url }}" {% if page.url == '/work/' %}class="active"{% endif %}>Work</a>
+        <a href="{{ '/favorites/' | url }}" {% if page.url == '/favorites/' %}class="active"{% endif %}>Favorites</a>
+        <a href="{{ '/about/' | url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
+        <a href="{{ '/contact/' | url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a>
       </nav>
     </div>
-    <div class="banner"><p class="tagline">{% if tagline %}{{tagline}}{% else %}Minimal writing and projects.{% endif %}</p></div>
   </header>
+
+  <div class="banner">
+    <div class="container">
+      <p class="tagline">Minimal writing and projects.</p>
+    </div>
+  </div>
+
   <main id="content" class="container">
-    {{ content }}
+    {{ content | safe }}
   </main>
-  <footer class="site-footer container">
-    <p>© {{ "now" | date: "%Y" }} droll. <a href="/sitemap.xml">Sitemap</a></p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ "now" | date: "%Y" }} droll. <a href="{{ '/sitemap.xml' | url }}">Sitemap</a></p>
+    </div>
   </footer>
 </body>
 </html>
