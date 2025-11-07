@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>{% if title %}{{ title }} — droll{% else %}droll — home{% endif %}</title>
+  <meta name="description" content="{{ description | default: 'Minimal personal site for essays, work, and favorites.' }}">
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+  {% if canonical %}<link rel="canonical" href="{{ canonical }}"/>{% endif %}
+  <meta property="og:title" content="{{ title | default: 'droll' }}"/>
+  <meta property="og:description" content="{{ description | default: 'Minimal personal site for essays, work, and favorites.' }}"/>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand"><a href="/">droll</a></div>
+      <nav class="nav">
+        <a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+        <a href="/papers/" {% if page.url == '/papers/' or page.url startswith '/papers/' %}class="active"{% endif %}>Papers</a>
+        <a href="/work/">Work</a>
+        <a href="/favorites/">Favorites</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+    <div class="banner"><p class="tagline">{% if tagline %}{{tagline}}{% else %}Minimal writing and projects.{% endif %}</p></div>
+  </header>
+  <main id="content" class="container">
+    {{ content }}
+  </main>
+  <footer class="site-footer container">
+    <p>© {{ "now" | date: "%Y" }} droll. <a href="/sitemap.xml">Sitemap</a></p>
+  </footer>
+</body>
+</html>
